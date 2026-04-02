@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lets Grow Clients | AI-Powered Legal Marketing for Law Firms</title>
+<meta name="description" content="Lets Grow Clients helps law firms grow their client base through AI-powered marketing, SEO, PPC, and lead generation. Specialized in PIP/No-Fault, Personal Injury, Criminal Defense, and more.">
+<meta name="keywords" content="legal marketing, law firm marketing, AI marketing for lawyers, PIP marketing, no-fault marketing, legal lead generation, law firm SEO, attorney marketing">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --purple:#6B35D9;--purple-light:#8B55F6;--purple-dark:#4A1FA8;
+  --magenta:#D435A0;--magenta-light:#F055C0;
+  --dark:#0A0A0F;--dark-2:#111118;--dark-3:#18181F;--dark-4:#22222C;
+  --white:#FFFFFF;--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);
+  --border:rgba(255,255,255,0.08);--border-accent:rgba(139,85,246,0.3);
+  --gradient:linear-gradient(135deg,#6B35D9 0%,#D435A0 100%);
+  --gradient-text:linear-gradient(90deg,#8B55F6 0%,#F055C0 100%);
+  --sans:'DM Sans',sans-serif;--serif:'DM Serif Display',serif;
+  --max-w:1200px;--section-pad:100px 0;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--dark);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+/* ===== UTILITY ===== */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.gradient-text{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-family:var(--sans);font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .3s ease}
+.btn-primary{background:var(--gradient);color:var(--white)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(107,53,217,0.4)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid var(--border-accent)}
+.btn-outline:hover{background:rgba(139,85,246,0.1);transform:translateY(-2px)}
+.section-label{font-size:.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--magenta-light);margin-bottom:16px}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);line-height:1.2;margin-bottom:20px}
+.section-desc{color:var(--text-muted);font-size:1.1rem;max-width:600px;line-height:1.7}
+
+/* ===== NAVIGATION ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s ease}
+.nav.scrolled{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{height:44px}
+.nav-logo span{font-family:var(--serif);font-size:1.15rem;letter-spacing:-.5px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--text-muted);transition:color .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{padding:10px 24px;font-size:.9rem}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.mobile-toggle span{width:24px;height:2px;background:var(--white);transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-menu.active{display:flex}
+.mobile-menu a{font-size:1.5rem;font-weight:500;color:var(--text-muted)}
+.mobile-menu a:hover{color:var(--white)}
+.mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--white);font-size:2rem;cursor:pointer}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 0 80px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:80%;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(107,53,217,0.18),transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:10%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(212,53,160,0.08),transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(139,85,246,0.1);border:1px solid var(--border-accent);border-radius:50px;padding:8px 20px;font-size:.85rem;font-weight:500;color:var(--purple-light);margin-bottom:32px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--magenta);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);line-height:1.08;margin-bottom:24px;max-width:800px}
+.hero p{color:var(--text-muted);font-size:1.2rem;max-width:580px;margin-bottom:40px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border)}
+.hero-stat h3{font-size:2rem;font-weight:700;margin-bottom:4px}
+.hero-stat p{font-size:.85rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px}
+
+/* ===== PIP SPOTLIGHT ===== */
+.pip-spotlight{padding:var(--section-pad);position:relative;overflow:hidden}
+.pip-spotlight::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border-accent),transparent)}
+.pip-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.pip-visual{position:relative;background:var(--dark-2);border:1px solid var(--border);border-radius:20px;padding:48px;overflow:hidden}
+.pip-visual::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(212,53,160,0.06),transparent);pointer-events:none}
+.pip-icon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative;z-index:1}
+.pip-icon-card{background:var(--dark-3);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:all .3s}
+.pip-icon-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
+.pip-icon-card .icon{font-size:1.8rem;margin-bottom:8px}
+.pip-icon-card span{font-size:.75rem;color:var(--text-muted);font-weight:500}
+.pip-highlight{background:var(--gradient);border:none!important}
+.pip-highlight span{color:var(--white)!important;font-weight:600!important}
+.pip-content h2{margin-bottom:24px}
+.pip-content p{color:var(--text-muted);margin-bottom:20px;line-height:1.7}
+.pip-features{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.pip-feature{display:flex;align-items:flex-start;gap:12px}
+.pip-feature .check{width:24px;height:24px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;margin-top:2px}
+.pip-feature div h4{font-size:.95rem;margin-bottom:2px}
+.pip-feature div p{font-size:.85rem;color:var(--text-dim);margin:0}
+
+/* ===== SERVICES ===== */
+.services{padding:var(--section-pad);background:var(--dark-2)}
+.services-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.services-header .section-desc{margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--dark-3);border:1px solid var(--border);border-radius:16px;padding:36px;transition:all .4s ease;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);opacity:0;transition:opacity .3s}
+.service-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:52px;height:52px;border-radius:12px;background:rgba(107,53,217,0.12);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.service-card h3{font-size:1.15rem;font-weight:600;margin-bottom:10px}
+.service-card p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
+
+/* ===== AI SOLUTIONS ===== */
+.ai-solutions{padding:var(--section-pad);position:relative}
+.ai-solutions::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(107,53,217,0.08),transparent 70%);pointer-events:none}
+.ai-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.ai-header .section-desc{margin:0 auto}
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:48px}
+.ai-card{background:var(--dark-2);border:1px solid var(--border);border-radius:16px;padding:40px;position:relative;overflow:hidden;transition:all .4s}
+.ai-card:hover{border-color:var(--border-accent)}
+.ai-card.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(135deg,rgba(107,53,217,0.08),rgba(212,53,160,0.05))}
+.ai-card .tag{display:inline-block;background:rgba(139,85,246,0.15);color:var(--purple-light);font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
+.ai-card h3{font-size:1.3rem;font-weight:600;margin-bottom:12px}
+.ai-card p{color:var(--text-muted);font-size:.95rem;line-height:1.6}
+.ai-card ul{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.ai-card ul li{display:flex;align-items:center;gap:8px;color:var(--text-muted);font-size:.9rem}
+.ai-card ul li::before{content:'→';color:var(--magenta-light)}
+.ai-visual{display:flex;flex-direction:column;gap:12px}
+.ai-metric{background:var(--dark-3);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.ai-metric span:first-child{font-size:.85rem;color:var(--text-muted)}
+.ai-metric span:last-child{font-weight:700;font-size:1.1rem}
+.ai-metric .up{color:#4ADE80}
+.ai-metric .accent{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+/* ===== PRACTICE AREAS ===== */
+.practice-areas{padding:var(--section-pad);background:var(--dark-2)}
+.pa-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.pa-header .section-desc{margin:0 auto}
+.pa-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pa-card{background:var(--dark-3);border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center;transition:all .4s;cursor:pointer;position:relative;overflow:hidden}
+.pa-card:hover{border-color:var(--border-accent);transform:translateY(-6px)}
+.pa-card.highlight{background:linear-gradient(135deg,rgba(107,53,217,0.15),rgba(212,53,160,0.1));border-color:var(--border-accent)}
+.pa-card.highlight::after{content:'FEATURED';position:absolute;top:12px;right:-24px;background:var(--gradient);color:var(--white);font-size:.6rem;font-weight:700;padding:3px 30px;transform:rotate(45deg);letter-spacing:1px}
+.pa-icon{font-size:2.2rem;margin-bottom:16px}
+.pa-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.pa-card p{font-size:.8rem;color:var(--text-dim);line-height:1.5}
+
+/* ===== PROCESS ===== */
+.process{padding:var(--section-pad)}
+.process-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.process-header .section-desc{margin:0 auto}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.process-steps::before{content:'';position:absolute;top:40px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,var(--purple),var(--magenta));opacity:.2}
+.process-step{text-align:center;position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;margin:0 auto 20px;position:relative;z-index:1}
+.process-step h3{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.process-step p{font-size:.85rem;color:var(--text-muted);line-height:1.6;max-width:240px;margin:0 auto}
+
+/* ===== RESULTS / SOCIAL PROOF ===== */
+.results{padding:var(--section-pad);background:var(--dark-2)}
+.results-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.results-header .section-desc{margin:0 auto}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:64px}
+.result-card{background:var(--dark-3);border:1px solid var(--border);border-radius:16px;padding:36px 24px;text-align:center}
+.result-card h3{font-size:2.5rem;font-weight:700;margin-bottom:8px}
+.result-card p{font-size:.85rem;color:var(--text-muted)}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial{background:var(--dark-3);border:1px solid var(--border);border-radius:16px;padding:32px}
+.testimonial-stars{color:#FACC15;font-size:.9rem;margin-bottom:16px;letter-spacing:2px}
+.testimonial p{color:var(--text-muted);font-size:.95rem;line-height:1.7;margin-bottom:20px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem}
+.testimonial-info h4{font-size:.9rem;font-weight:600}
+.testimonial-info span{font-size:.8rem;color:var(--text-dim)}
+
+/* ===== CTA ===== */
+.cta{padding:var(--section-pad)}
+.cta-box{background:linear-gradient(135deg,rgba(107,53,217,0.12),rgba(212,53,160,0.08));border:1px solid var(--border-accent);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-50%;left:-25%;width:150%;height:150%;background:radial-gradient(circle at 30% 50%,rgba(107,53,217,0.1),transparent 60%);pointer-events:none}
+.cta-box h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);margin-bottom:20px;position:relative}
+.cta-box p{color:var(--text-muted);font-size:1.1rem;max-width:550px;margin:0 auto 36px;position:relative}
+.cta-box .btn{position:relative}
+
+/* ===== FOOTER ===== */
+.footer{padding:60px 0 30px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{color:var(--text-muted);font-size:.9rem;margin-top:16px;max-width:300px;line-height:1.6}
+.footer-col h4{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;color:var(--text-muted)}
+.footer-col a{display:block;font-size:.9rem;color:var(--text-dim);margin-bottom:10px;transition:color .3s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer-bottom p{font-size:.8rem;color:var(--text-dim)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--text-muted);transition:all .3s}
+.footer-social a:hover{border-color:var(--border-accent);color:var(--white)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .services-grid,.ai-grid{grid-template-columns:repeat(2,1fr)}
+  .pa-grid{grid-template-columns:repeat(2,1fr)}
+  .results-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonials{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:repeat(2,1fr)}
+  .process-steps::before{display:none}
+  .pip-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .ai-card.featured{grid-column:span 2;grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  :root{--section-pad:64px 0}
+  .nav-links{display:none}
+  .mobile-toggle{display:flex}
+  .hero h1{font-size:clamp(2.2rem,8vw,3.2rem)}
+  .hero-stats{flex-direction:column;gap:24px}
+  .services-grid,.ai-grid,.results-grid,.pa-grid{grid-template-columns:1fr}
+  .ai-card.featured{grid-column:span 1}
+  .process-steps{grid-template-columns:1fr}
+  .cta-box{padding:48px 24px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg width="44" height="44" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="logoGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6B35D9"/><stop offset="100%" stop-color="#D435A0"/></linearGradient></defs>
+        <circle cx="50" cy="50" r="40" stroke="url(#logoGrad)" stroke-width="4" fill="none"/>
+        <text x="22" y="60" font-family="DM Sans" font-weight="700" font-size="24" fill="url(#logoGrad)">grow.</text>
+        <line x1="55" y1="65" x2="78" y2="22" stroke="url(#logoGrad)" stroke-width="3.5" stroke-linecap="round"/>
+        <polyline points="70,20 79,21 76,30" fill="none" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>lets grow <span class="gradient-text">clients</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#ai-solutions">AI Solutions</a>
+      <a href="#practice-areas">Practice Areas</a>
+      <a href="#process">Process</a>
+      <a href="#results">Results</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Free Consultation</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('active')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="this.parentElement.classList.remove('active')" aria-label="Close menu">&times;</button>
+  <a href="#services" onclick="this.parentElement.classList.remove('active')">Services</a>
+  <a href="#ai-solutions" onclick="this.parentElement.classList.remove('active')">AI Solutions</a>
+  <a href="#practice-areas" onclick="this.parentElement.classList.remove('active')">Practice Areas</a>
+  <a href="#process" onclick="this.parentElement.classList.remove('active')">Process</a>
+  <a href="#results" onclick="this.parentElement.classList.remove('active')">Results</a>
+  <a href="#contact" class="btn btn-primary" onclick="this.parentElement.classList.remove('active')">Free Consultation</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        AI-Powered Legal Marketing
+      </div>
+      <h1>Your law firm deserves <span class="gradient-text">more clients.</span> We make it happen.</h1>
+      <p>We combine cutting-edge AI technology with proven legal marketing strategies to fill your pipeline with qualified cases — from PIP and no-fault to personal injury and beyond.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">Get Your Free Growth Audit →</a>
+        <a href="#services" class="btn btn-outline">See Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h3 class="gradient-text">500+</h3>
+          <p>Law Firms Served</p>
+        </div>
+        <div class="hero-stat">
+          <h3 class="gradient-text">3.2x</h3>
+          <p>Avg. Case Volume Growth</p>
+        </div>
+        <div class="hero-stat">
+          <h3 class="gradient-text">$85M+</h3>
+          <p>In Ad Spend Managed</p>
+        </div>
+        <div class="hero-stat">
+          <h3 class="gradient-text">94%</h3>
+          <p>Client Retention Rate</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PIP / NO-FAULT SPOTLIGHT ===== -->
+<section class="pip-spotlight" id="pip">
+  <div class="container">
+    <div class="pip-grid">
+      <div class="pip-visual">
+        <div class="pip-icon-grid">
+          <div class="pip-icon-card">
+            <div class="icon">🚗</div>
+            <span>Auto Claims</span>
+          </div>
+          <div class="pip-icon-card pip-highlight">
+            <div class="icon">⚡</div>
+            <span>PIP Cases</span>
+          </div>
+          <div class="pip-icon-card">
+            <div class="icon">📋</div>
+            <span>No-Fault</span>
+          </div>
+          <div class="pip-icon-card">
+            <div class="icon">🏥</div>
+            <span>Med Coverage</span>
+          </div>
+          <div class="pip-icon-card pip-highlight">
+            <div class="icon">📈</div>
+            <span>Lead Gen</span>
+          </div>
+          <div class="pip-icon-card">
+            <div class="icon">🎯</div>
+            <span>Targeting</span>
+          </div>
+          <div class="pip-icon-card">
+            <div class="icon">🤖</div>
+            <span>AI Intake</span>
+          </div>
+          <div class="pip-icon-card">
+            <div class="icon">📞</div>
+            <span>Call Tracking</span>
+          </div>
+          <div class="pip-icon-card pip-highlight">
+            <div class="icon">💰</div>
+            <span>ROI Focused</span>
+          </div>
+        </div>
+      </div>
+      <div class="pip-content">
+        <div class="section-label">Our Specialty</div>
+        <h2 class="section-title">The PIP & No-Fault <span class="gradient-text">Growth Engine</span></h2>
+        <p>Personal Injury Protection and no-fault cases are high-volume, high-velocity — and most marketing agencies don't understand the nuances. We do. Our team has generated tens of thousands of PIP leads for firms across Florida, New York, New Jersey, Michigan, and every no-fault state.</p>
+        <p>We built proprietary AI models specifically trained on PIP/no-fault search behavior, claims patterns, and intake optimization to deliver qualified prospects at a fraction of what general agencies charge.</p>
+        <div class="pip-features">
+          <div class="pip-feature">
+            <div class="check">✓</div>
+            <div>
+              <h4>State-Specific Compliance</h4>
+              <p>Campaigns tuned to PIP regulations by state</p>
+            </div>
+          </div>
+          <div class="pip-feature">
+            <div class="check">✓</div>
+            <div>
+              <h4>AI-Powered Lead Scoring</h4>
+              <p>Prioritize cases by value and probability of conversion</p>
+            </div>
+          </div>
+          <div class="pip-feature">
+            <div class="check">✓</div>
+            <div>
+              <h4>Rapid Intake Automation</h4>
+              <p>AI chatbots and voice agents pre-qualify leads 24/7</p>
+            </div>
+          </div>
+          <div class="pip-feature">
+            <div class="check">✓</div>
+            <div>
+              <h4>Full-Funnel Attribution</h4>
+              <p>Track every dollar from click to signed retainer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Full-Service Legal Marketing, <span class="gradient-text">Amplified by AI</span></h2>
+      <p class="section-desc">Everything your firm needs to attract, convert, and retain more clients — from search to signature.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>Legal SEO & Content</h3>
+        <p>Dominate organic search with practice-area-specific content strategies, technical SEO, local optimization, and AI-generated content that ranks. We don't just build links — we build authority.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📣</div>
+        <h3>PPC & Paid Media</h3>
+        <p>Google Ads, Local Service Ads, and social media campaigns engineered for legal. Our AI bid management reduces cost-per-case while maximizing qualified lead volume.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Website Design & Dev</h3>
+        <p>High-converting, ADA-compliant law firm websites built for speed, trust, and conversions. Every site is designed to turn visitors into consultations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Branding & Creative</h3>
+        <p>Stand out in your market with compelling brand identities, video production, and creative assets that communicate authority and build trust with potential clients.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Analytics & Reporting</h3>
+        <p>Transparent, real-time dashboards that track every lead, call, form, and signed case. Know exactly what's working and what your true cost-per-acquisition is.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media & Reputation</h3>
+        <p>Build your firm's presence across platforms, generate authentic reviews, and manage your online reputation so prospects trust you before they ever pick up the phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AI SOLUTIONS ===== -->
+<section class="ai-solutions" id="ai-solutions">
+  <div class="container">
+    <div class="ai-header">
+      <div class="section-label">AI-Powered Growth</div>
+      <h2 class="section-title">Legal Marketing Meets <span class="gradient-text">Artificial Intelligence</span></h2>
+      <p class="section-desc">Your competitors are still doing marketing the old way. Our AI solutions give your firm an unfair advantage — from lead gen to client intake.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-card featured">
+        <div>
+          <div class="tag">Flagship Solution</div>
+          <h3>AI Lead Generation & Scoring Engine</h3>
+          <p>Our proprietary AI engine analyzes thousands of data signals — search intent, demographics, case viability, and behavioral patterns — to deliver and score leads in real time. Stop wasting intake resources on low-value inquiries.</p>
+          <ul>
+            <li>Predictive case value scoring</li>
+            <li>Real-time lead qualification</li>
+            <li>Automated intake routing by practice area</li>
+            <li>Integration with your CRM and case management</li>
+          </ul>
+        </div>
+        <div class="ai-visual">
+          <div class="ai-metric">
+            <span>Lead Quality Score</span>
+            <span class="accent">92/100</span>
+          </div>
+          <div class="ai-metric">
+            <span>Intake Conversion</span>
+            <span class="up">+47%</span>
+          </div>
+          <div class="ai-metric">
+            <span>Cost Per Case</span>
+            <span style="color:#F87171">-35%</span>
+          </div>
+          <div class="ai-metric">
+            <span>Response Time</span>
+            <span class="accent">&lt; 2 min</span>
+          </div>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="tag">Conversational AI</div>
+        <h3>24/7 AI Intake Agents</h3>
+        <p>Custom-trained AI chatbots and voice agents that answer prospect questions, pre-qualify leads, and schedule consultations around the clock — even at 2 AM on a Saturday.</p>
+        <ul>
+          <li>Multi-language support</li>
+          <li>Practice-area trained responses</li>
+          <li>Seamless human handoff</li>
+          <li>SMS, web chat, and voice</li>
+        </ul>
+      </div>
+      <div class="ai-card">
+        <div class="tag">Content AI</div>
+        <h3>AI Content & SEO Automation</h3>
+        <p>Generate practice-area-specific blog posts, landing pages, and FAQ content at scale — all optimized for search engines and reviewed by legal marketing experts.</p>
+        <ul>
+          <li>Generative Engine Optimization (GEO)</li>
+          <li>Automated content calendars</li>
+          <li>Local SEO content at scale</li>
+          <li>E-E-A-T compliant copy</li>
+        </ul>
+      </div>
+      <div class="ai-card">
+        <div class="tag">Automation</div>
+        <h3>Marketing Workflow Automation</h3>
+        <p>Eliminate manual busywork with AI-powered workflows. From lead nurture sequences to review generation, we automate the repetitive tasks that slow your firm down.</p>
+        <ul>
+          <li>Email & SMS drip campaigns</li>
+          <li>Automated review solicitation</li>
+          <li>Smart retargeting audiences</li>
+          <li>CRM data enrichment</li>
+        </ul>
+      </div>
+      <div class="ai-card">
+        <div class="tag">Analytics</div>
+        <h3>AI-Powered Performance Intelligence</h3>
+        <p>Go beyond dashboards. Our AI analyzes your marketing performance across every channel and proactively surfaces insights, anomalies, and optimization opportunities.</p>
+        <ul>
+          <li>Predictive budget allocation</li>
+          <li>Anomaly detection & alerts</li>
+          <li>Competitive intelligence monitoring</li>
+          <li>Attribution modeling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRACTICE AREAS ===== -->
+<section class="practice-areas" id="practice-areas">
+  <div class="container">
+    <div class="pa-header">
+      <div class="section-label">Practice Areas We Serve</div>
+      <h2 class="section-title">Marketing Strategies Built for <span class="gradient-text">Your Practice</span></h2>
+      <p class="section-desc">Every practice area has unique client behaviors, search patterns, and competitive dynamics. We tailor campaigns accordingly.</p>
+    </div>
+    <div class="pa-grid">
+      <div class="pa-card highlight">
+        <div class="pa-icon">🛡️</div>
+        <h3>PIP / No-Fault</h3>
+        <p>High-volume lead generation for personal injury protection and no-fault claims. Our specialty — and where we deliver the highest ROI.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">⚖️</div>
+        <h3>Criminal Defense</h3>
+        <p>Urgent, high-intent search campaigns that capture prospects at the moment they need a defense attorney most.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">👨‍👩‍👧</div>
+        <h3>Family Law</h3>
+        <p>Empathetic, trust-building marketing for divorce, custody, and family matters that converts anxious searchers into consultations.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">💼</div>
+        <h3>Employment Law</h3>
+        <p>Targeted campaigns for wrongful termination, discrimination, and wage disputes that reach employees at their breaking point.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">📉</div>
+        <h3>Bankruptcy</h3>
+        <p>Compassionate positioning and search strategies for Chapter 7 and Chapter 13 prospects seeking financial relief.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">📜</div>
+        <h3>Estate & Probate</h3>
+        <p>Authority-driven content marketing and local SEO that positions your firm as the trusted choice for wills, trusts, and estate planning.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">🏗️</div>
+        <h3>Workers' Compensation</h3>
+        <p>Multi-channel campaigns targeting injured workers with timely, compliant messaging across search, social, and display.</p>
+      </div>
+      <div class="pa-card">
+        <div class="pa-icon">♿</div>
+        <h3>Social Security Disability</h3>
+        <p>Nationwide lead generation for SSDI and SSI claims with AI-optimized targeting and high-volume case acquisition strategies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-header">
+      <div class="section-label">How We Work</div>
+      <h2 class="section-title">From Strategy to <span class="gradient-text">Signed Cases</span></h2>
+      <p class="section-desc">A transparent, results-driven process designed to get your firm more clients — fast.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h3>Discovery & Audit</h3>
+        <p>We analyze your market, competitors, current marketing, and case goals to build a data-driven growth roadmap.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>Strategy & Build</h3>
+        <p>Custom campaigns, AI integrations, and creative assets — all tailored to your practice areas and target markets.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Launch & Optimize</h3>
+        <p>Campaigns go live with continuous AI-powered optimization. Our algorithms learn and improve daily for maximum ROI.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Scale & Grow</h3>
+        <p>As results compound, we scale what works. More qualified leads, more signed cases, more revenue for your firm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS & TESTIMONIALS ===== -->
+<section class="results" id="results">
+  <div class="container">
+    <div class="results-header">
+      <div class="section-label">Proven Results</div>
+      <h2 class="section-title">Numbers That Speak <span class="gradient-text">for Themselves</span></h2>
+      <p class="section-desc">We're measured by one thing: the growth we drive for our law firm clients.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <h3 class="gradient-text">47%</h3>
+        <p>Average Increase in Qualified Leads</p>
+      </div>
+      <div class="result-card">
+        <h3 class="gradient-text">-35%</h3>
+        <p>Reduction in Cost Per Signed Case</p>
+      </div>
+      <div class="result-card">
+        <h3 class="gradient-text">2.8x</h3>
+        <p>Average Return on Ad Spend</p>
+      </div>
+      <div class="result-card">
+        <h3 class="gradient-text">&lt;90s</h3>
+        <p>Avg. AI Response Time to New Leads</p>
+      </div>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Lets Grow Clients transformed our PIP practice. We went from 40 cases a month to over 120 — and the lead quality actually improved. Their AI intake system alone was a game-changer."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JR</div>
+          <div class="testimonial-info">
+            <h4>James R.</h4>
+            <span>Managing Partner, FL Personal Injury Firm</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"We tried three other legal marketing agencies before finding LGC. The difference is night and day — they actually understand our practice areas and the AI tools they've built are years ahead."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div class="testimonial-info">
+            <h4>Sarah M.</h4>
+            <span>Partner, NJ Criminal Defense & Family Law</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"The ROI tracking is incredible. For the first time, I can see exactly what every marketing dollar produces. Our workers' comp cases doubled in the first six months."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DK</div>
+          <div class="testimonial-info">
+            <h4>David K.</h4>
+            <span>Senior Partner, NY Workers' Comp Firm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Ready to <span class="gradient-text">Grow Your Caseload?</span></h2>
+      <p>Get a free marketing audit and see exactly how we can increase your firm's case volume with AI-powered strategies — no obligations, no pressure.</p>
+      <a href="mailto:hello@letsgrowclients.com" class="btn btn-primary">Schedule Your Free Growth Audit →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:8px">
+          <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="logoGrad2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#6B35D9"/><stop offset="100%" stop-color="#D435A0"/></linearGradient></defs>
+            <circle cx="50" cy="50" r="40" stroke="url(#logoGrad2)" stroke-width="4" fill="none"/>
+            <text x="22" y="60" font-family="DM Sans" font-weight="700" font-size="24" fill="url(#logoGrad2)">grow.</text>
+            <line x1="55" y1="65" x2="78" y2="22" stroke="url(#logoGrad2)" stroke-width="3.5" stroke-linecap="round"/>
+            <polyline points="70,20 79,21 76,30" fill="none" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-family:var(--serif);font-size:1.1rem">lets grow <span class="gradient-text">clients</span></span>
+        </a>
+        <p>AI-powered legal marketing that delivers more qualified leads, more signed cases, and better ROI for law firms across the country.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Legal SEO</a>
+        <a href="#services">PPC & Paid Media</a>
+        <a href="#services">Web Design</a>
+        <a href="#services">Branding</a>
+        <a href="#services">Analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>AI Solutions</h4>
+        <a href="#ai-solutions">Lead Scoring AI</a>
+        <a href="#ai-solutions">AI Intake Agents</a>
+        <a href="#ai-solutions">Content Automation</a>
+        <a href="#ai-solutions">Workflow AI</a>
+        <a href="#ai-solutions">Performance AI</a>
+      </div>
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <a href="#pip">PIP / No-Fault</a>
+        <a href="#practice-areas">Criminal Defense</a>
+        <a href="#practice-areas">Family Law</a>
+        <a href="#practice-areas">Employment Law</a>
+        <a href="#practice-areas">Workers' Comp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lets Grow Clients. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">◻</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Intersection Observer for fade-in animations
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.service-card, .ai-card, .pa-card, .result-card, .testimonial, .process-step').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// Counter animation for stats
+function animateCounter(el, target, suffix = '') {
+  const isFloat = String(target).includes('.');
+  const duration = 2000;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = isFloat ? (target * eased).toFixed(1) : Math.floor(target * eased);
+    el.textContent = current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.dataset.animated) {
+      entry.target.dataset.animated = 'true';
+      const text = entry.target.textContent;
+      const num = parseFloat(text);
+      const suffix = text.replace(/[\d.]/g, '');
+      if (!isNaN(num)) animateCounter(entry.target, num, suffix);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.hero-stat h3, .result-card h3').forEach(el => {
+  statObserver.observe(el);
+});
+</script>
+</body>
+</html>
