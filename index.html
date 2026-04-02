@@ -194,6 +194,31 @@ ul{list-style:none}
 .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--text-muted);transition:all .3s}
 .footer-social a:hover{border-color:var(--border-accent);color:var(--white)}
 
+/* ===== CONTACT FORM SECTION ===== */
+.contact-section{padding:var(--section-pad);position:relative}
+.contact-section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--border-accent),transparent)}
+.contact-form{background:var(--dark-2);border:1px solid var(--border);border-radius:20px;padding:48px;max-width:600px;margin:0 auto}
+.form-group{margin-bottom:24px}
+.form-group label{display:block;font-size:.95rem;font-weight:500;margin-bottom:8px;color:var(--white)}
+.form-group input,.form-group textarea{width:100%;padding:12px 16px;background:var(--dark-3);border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:.95rem;color:var(--white);transition:all .3s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--border-accent);background:var(--dark-3)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;padding:14px 32px;background:var(--gradient);color:var(--white);border:none;border-radius:50px;font-weight:600;font-size:1rem;cursor:pointer;transition:all .3s}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(107,53,217,0.4)}
+
+/* ===== NEWSLETTER SECTION ===== */
+.newsletter{padding:var(--section-pad);position:relative}
+.newsletter-container{background:linear-gradient(135deg,rgba(107,53,217,0.1),rgba(212,53,160,0.05));border:1px solid var(--border-accent);border-radius:20px;padding:60px;max-width:600px;margin:0 auto;text-align:center}
+.newsletter h3{font-family:var(--serif);font-size:2rem;margin-bottom:16px}
+.newsletter p{color:var(--text-muted);font-size:.95rem;margin-bottom:32px}
+.newsletter-form{display:flex;gap:12px;margin-bottom:16px}
+.newsletter-form input{flex:1;padding:12px 16px;background:var(--dark);border:1px solid var(--border);border-radius:8px;font-family:var(--sans);color:var(--white)}
+.newsletter-form input::placeholder{color:var(--text-dim)}
+.newsletter-form input:focus{outline:none;border-color:var(--border-accent)}
+.newsletter-form button{padding:12px 32px;background:var(--gradient);color:var(--white);border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s}
+.newsletter-form button:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(107,53,217,0.4)}
+.newsletter-privacy{font-size:.75rem;color:var(--text-dim)}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1024px){
   .services-grid,.ai-grid{grid-template-columns:repeat(2,1fr)}
@@ -629,7 +654,7 @@ ul{list-style:none}
         <div class="testimonial-stars">★★★★★</div>
         <p>"Lets Grow Clients transformed our PIP practice. We went from 40 cases a month to over 120 — and the lead quality actually improved. Their AI intake system alone was a game-changer."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">JR</div>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James R." style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
           <div class="testimonial-info">
             <h4>James R.</h4>
             <span>Managing Partner, FL Personal Injury Firm</span>
@@ -640,7 +665,7 @@ ul{list-style:none}
         <div class="testimonial-stars">★★★★★</div>
         <p>"We tried three other legal marketing agencies before finding LGC. The difference is night and day — they actually understand our practice areas and the AI tools they've built are years ahead."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">SM</div>
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah M." style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
           <div class="testimonial-info">
             <h4>Sarah M.</h4>
             <span>Partner, NJ Criminal Defense & Family Law</span>
@@ -651,7 +676,7 @@ ul{list-style:none}
         <div class="testimonial-stars">★★★★★</div>
         <p>"The ROI tracking is incredible. For the first time, I can see exactly what every marketing dollar produces. Our workers' comp cases doubled in the first six months."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">DK</div>
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David K." style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
           <div class="testimonial-info">
             <h4>David K.</h4>
             <span>Senior Partner, NY Workers' Comp Firm</span>
@@ -673,6 +698,46 @@ ul{list-style:none}
   </div>
 </section>
 
+<!-- ===== CONTACT FORM SECTION ===== -->
+<section class="contact-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Get In Touch</div>
+    <h2 class="section-title" style="text-align:center;margin-bottom:48px">Send us a Message</h2>
+    <form class="contact-form" onsubmit="return handleContactSubmit(event)">
+      <div class="form-group">
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-phone">Phone</label>
+        <input type="tel" id="contact-phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER SECTION ===== -->
+<section class="newsletter">
+  <div class="newsletter-container">
+    <h3>Stay Updated</h3>
+    <p>Get the latest legal marketing insights and AI strategies delivered to your inbox.</p>
+    <form class="newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container">
@@ -689,6 +754,10 @@ ul{list-style:none}
           <span style="font-family:var(--serif);font-size:1.1rem">lets grow <span class="gradient-text">clients</span></span>
         </a>
         <p>AI-powered legal marketing that delivers more qualified leads, more signed cases, and better ROI for law firms across the country.</p>
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:8px">
+          <a href="tel:+17324843000" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;transition:color .3s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--text-muted)'">📞 732-484-3000</a>
+          <a href="mailto:hello@letsgrowclients.com" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;transition:color .3s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--text-muted)'">📧 hello@letsgrowclients.com</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
@@ -716,12 +785,13 @@ ul{list-style:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Lets Grow Clients. All rights reserved.</p>
+      <div style="text-align:center">
+        <p>&copy; 2026 Lets Grow Clients. All rights reserved.</p>
+        <p style="margin-top:12px;font-size:.75rem"><a href="privacy.html" style="color:var(--text-dim);text-decoration:none;transition:color .3s" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--text-dim)'">Privacy Policy</a></p>
+      </div>
       <div class="footer-social">
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="#" aria-label="Facebook">f</a>
-        <a href="#" aria-label="Instagram">◻</a>
+        <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
       </div>
     </div>
   </div>
@@ -795,6 +865,88 @@ const statObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.hero-stat h3, .result-card h3').forEach(el => {
   statObserver.observe(el);
 });
+
+// Cloudflare Worker Configuration
+const WORKER_URL = 'https://kb-leads-proxy.bryan-boutin.workers.dev';
+
+// Form submission handlers
+async function handleContactSubmit(event) {
+  event.preventDefault();
+  const btn = event.target.querySelector('.form-submit');
+  const originalText = btn.textContent;
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const formData = {
+    name: document.getElementById('contact-name').value.trim(),
+    email: document.getElementById('contact-email').value.trim(),
+    phone: document.getElementById('contact-phone').value.trim(),
+    message: document.getElementById('contact-message').value.trim(),
+    source: 'LetsGrowClients.com',
+    entryPoint: 'Contact Form'
+  };
+
+  try {
+    const response = await fetch(WORKER_URL + '/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) throw new Error('Failed to submit form');
+
+    alert('Thank you for your message! We will get back to you soon at ' + formData.email);
+    event.target.reset();
+    btn.textContent = originalText;
+    btn.disabled = false;
+  } catch (error) {
+    console.error('Form submission error:', error);
+    alert('Sorry, there was an error submitting your form. Please try again.');
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
+
+  return false;
+}
+
+async function handleNewsletterSubmit(event) {
+  event.preventDefault();
+  const btn = event.target.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+
+  btn.disabled = true;
+  btn.textContent = 'Subscribing...';
+
+  const email = event.target.querySelector('input[type="email"]').value.trim();
+
+  const formData = {
+    email: email,
+    source: 'LetsGrowClients.com - Newsletter'
+  };
+
+  try {
+    const response = await fetch(WORKER_URL + '/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    if (!response.ok) throw new Error('Failed to subscribe');
+
+    alert('Thank you for subscribing! Check your email for confirmation.');
+    event.target.reset();
+    btn.textContent = originalText;
+    btn.disabled = false;
+  } catch (error) {
+    console.error('Newsletter submission error:', error);
+    alert('Sorry, there was an error subscribing. Please try again.');
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
+
+  return false;
+}
 </script>
 </body>
 </html>
