@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Lets Grow Clients - Legal Marketing</title>
+<meta name="description" content="Meet the team at Lets Grow Clients. AI-powered legal marketing specialists helping law firms grow their client base through proven strategies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#6B35D9;--purple-light:#8B55F6;--purple-dark:#4A1FA8;
+  --magenta:#D435A0;--magenta-light:#F055C0;
+  --dark:#0A0A0F;--dark-2:#111118;--dark-3:#18181F;--dark-4:#22222C;
+  --white:#FFFFFF;--text-muted:rgba(255,255,255,0.55);--text-dim:rgba(255,255,255,0.35);
+  --border:rgba(255,255,255,0.08);--border-accent:rgba(139,85,246,0.3);
+  --gradient:linear-gradient(135deg,#6B35D9 0%,#D435A0 100%);
+  --gradient-text:linear-gradient(90deg,#8B55F6 0%,#F055C0 100%);
+  --sans:'DM Sans',sans-serif;--serif:'DM Serif Display',serif;
+  --max-w:1200px;--section-pad:100px 0;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--dark);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.gradient-text{background:var(--gradient-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;font-family:var(--sans);font-weight:600;font-size:1rem;cursor:pointer;border:none;transition:all .3s ease}
+.btn-primary{background:var(--gradient);color:var(--white)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(107,53,217,0.4)}
+.section-label{font-size:.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--magenta-light);margin-bottom:16px}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);line-height:1.2;margin-bottom:20px}
+.section-desc{color:var(--text-muted);font-size:1.1rem;max-width:600px;line-height:1.7}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:all .3s ease}
+.nav.scrolled{background:rgba(10,10,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--text-muted);transition:color .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{padding:10px 24px;font-size:.9rem}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 0 80px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:120%;height:80%;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(107,53,217,0.18),transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(139,85,246,0.1);border:1px solid var(--border-accent);border-radius:50px;padding:8px 20px;font-size:.85rem;font-weight:500;color:var(--purple-light);margin-bottom:32px}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--magenta);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);line-height:1.08;margin-bottom:24px;max-width:800px}
+.hero p{color:var(--text-muted);font-size:1.2rem;max-width:580px;margin-bottom:40px;line-height:1.7}
+
+/* SECTIONS */
+.section{padding:var(--section-pad);position:relative}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px}
+.story-visual{position:relative}
+.story-visual-box{background:var(--dark-2);border:1px solid var(--border);border-radius:20px;padding:48px;overflow:hidden;height:400px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.story-content h2{margin-bottom:24px}
+.story-content p{color:var(--text-muted);margin-bottom:20px;line-height:1.7}
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.approach-card{background:var(--dark-2);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all .3s}
+.approach-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
+.approach-card h3{font-size:1.15rem;margin-bottom:12px}
+.approach-card p{color:var(--text-muted);font-size:.95rem}
+
+/* VALUES */
+.values-section{padding:var(--section-pad);background:linear-gradient(180deg,rgba(107,53,217,0.08),transparent)}
+.values-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value-card{background:var(--dark-2);border:1px solid var(--border);border-radius:16px;padding:36px;transition:all .4s ease}
+.value-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
+.value-icon{font-size:2rem;margin-bottom:16px}
+.value-card h3{font-size:1.15rem;margin-bottom:12px}
+.value-card p{color:var(--text-muted);font-size:.95rem}
+
+/* TEAM */
+.team-section{padding:var(--section-pad)}
+.team-header{text-align:center;max-width:700px;margin:0 auto 64px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:64px}
+.team-member{background:var(--dark-2);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s}
+.team-member:hover{border-color:var(--border-accent);transform:translateY(-4px)}
+.member-image{width:100%;height:280px;overflow:hidden;background:var(--dark-3)}
+.member-image img{width:100%;height:100%;object-fit:cover}
+.member-info{padding:28px;text-align:center}
+.member-info h3{font-size:1.1rem;font-weight:600;margin-bottom:6px}
+.member-title{color:var(--purple-light);font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.member-info p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
+.founders-row{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-bottom:40px}
+
+/* CTA */
+.cta-section{padding:var(--section-pad)}
+.cta-box{background:linear-gradient(135deg,rgba(107,53,217,0.12),rgba(212,53,160,0.08));border:1px solid var(--border-accent);border-radius:24px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:-50%;left:-25%;width:150%;height:150%;background:radial-gradient(circle at 30% 50%,rgba(107,53,217,0.1),transparent 60%);pointer-events:none}
+.cta-box h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);margin-bottom:20px;position:relative;z-index:1}
+.cta-box p{color:var(--text-muted);font-size:1.1rem;max-width:550px;margin:0 auto 36px;position:relative;z-index:1}
+.cta-box .btn{position:relative;z-index:1}
+
+/* FOOTER */
+.footer{padding:60px 0 30px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand p{color:var(--text-muted);font-size:.9rem;margin-top:16px;max-width:300px;line-height:1.6}
+.footer-col h4{font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px;color:var(--text-muted)}
+.footer-col a{display:block;font-size:.9rem;color:var(--text-dim);margin-bottom:10px;transition:color .3s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border)}
+.footer-bottom p{font-size:.8rem;color:var(--text-dim)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+<div class="nav-inner">
+<div class="nav-logo"><span style="font-family:var(--serif);font-size:1.15rem;letter-spacing:-.5px;">LGC</span></div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="#about" style="color:var(--white);">About</a>
+<a href="index.html">Services</a>
+<a href="index.html">Contact</a>
+</div>
+<a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content container">
+<div class="hero-badge"><span class="dot"></span>About LGC</div>
+<h1>Building <span class="gradient-text">Law Firm Growth</span> Through Proven Strategy</h1>
+<p>We're a team of legal marketing specialists who understand the unique challenges law firms face in acquiring high-quality clients. Our approach combines deep industry knowledge with cutting-edge AI and data-driven marketing.</p>
+</div>
+</section>
+
+<!-- STORY -->
+<section class="section">
+<div class="container">
+<div class="story-grid">
+<div class="story-visual">
+<div class="story-visual-box">📈</div>
+</div>
+<div class="story-content">
+<span class="section-label">Our Story</span>
+<h2>Founded on Real Legal Industry Experience</h2>
+<p>Lets Grow Clients was born from frustration. Our co-founders saw brilliant attorneys struggling to fill their pipelines, not because their work wasn't excellent, but because they didn't have a partner who truly understood legal marketing.</p>
+<p style="margin-top:20px;color:var(--text-muted);">Bryan brought strategic vision and deep expertise in AI and technology adoption across industries. Kirk brought unmatched sales and marketing acumen, along with a philosophy of keeping everything simple and results-focused.</p>
+<p style="margin-top:20px;color:var(--text-muted);">Together, they built a firm specifically designed for law practices — understanding everything from PIP and no-fault claims to personal injury, criminal defense, and family law dynamics. Every strategy we deploy is informed by the realities of running a legal practice.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- APPROACH -->
+<section class="section">
+<div class="container">
+<div class="section-label">Our Approach</div>
+<h2 class="section-title">What Sets Us Apart</h2>
+<div class="approach-grid">
+<div class="approach-card">
+<div style="font-size:2rem;margin-bottom:12px;">⚖️</div>
+<h3>Legal Industry Focused</h3>
+<p>We specialize exclusively in law firm marketing. This isn't our side business. Every tool, every strategy, every decision is informed by the unique challenges you face.</p>
+</div>
+<div class="approach-card">
+<div style="font-size:2rem;margin-bottom:12px;">🤖</div>
+<h3>AI-Powered Efficiency</h3>
+<p>We leverage artificial intelligence to optimize campaigns, predict which leads are most likely to convert, and automate routine marketing tasks — letting you focus on clients.</p>
+</div>
+<div class="approach-card">
+<div style="font-size:2rem;margin-bottom:12px;">📊</div>
+<h3>Data-Driven Results</h3>
+<p>Every campaign is measured. We report on what matters: quality leads, conversion rates, and client acquisition cost. No vanity metrics, just real results.</p>
+</div>
+<div class="approach-card">
+<div style="font-size:2rem;margin-bottom:12px;">🚀</div>
+<h3>Fast Implementation</h3>
+<p>We believe in getting you results quickly. Most law firms see meaningful lead flow improvement within 30-60 days, not six months from now.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+<div class="container">
+<div class="values-header">
+<span class="section-label">Our Values</span>
+<h2 class="section-title">What Drives <span class="gradient-text">Everything We Do</span></h2>
+<p class="section-desc">These aren't slogans. They're the foundation of how we work with every client.</p>
+</div>
+<div class="values-grid">
+<div class="value-card">
+<div class="value-icon">🎯</div>
+<h3>Results Over Everything</h3>
+<p>We measure success the same way you do: by the quality clients walking through your door. Every dollar you invest should generate predictable returns.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">🔍</div>
+<h3>Radical Transparency</h3>
+<p>You see exactly what we're doing, how much it costs, and what it's generating. Real-time dashboards. Monthly deep-dives. No black boxes.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">🤝</div>
+<h3>True Partnership</h3>
+<p>We're invested in your success. When you win new clients, we win. When you hit a plateau, we adjust. Your goals are our goals.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">⚡</div>
+<h3>Keep It Simple</h3>
+<p>Complex strategies fail. We believe in straightforward, elegant solutions that your team can understand and execute alongside us.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">🔬</div>
+<h3>Innovation First</h3>
+<p>Technology is changing legal marketing fast. We stay ahead of the curve so your firm benefits from the latest tools and tactics.</p>
+</div>
+<div class="value-card">
+<div class="value-icon">📈</div>
+<h3>Sustainable Growth</h3>
+<p>We're not interested in quick wins followed by burnout. We build sustainable systems that keep generating clients year after year.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+<div class="container">
+<div class="team-header">
+<span class="section-label">The Team</span>
+<h2 class="section-title">Meet the People <span class="gradient-text">Behind Your Growth</span></h2>
+<p class="section-desc">A diverse team of marketing strategists, legal industry specialists, and AI innovators united by one mission: helping your practice thrive.</p>
+</div>
+
+<div style="margin-bottom:80px;">
+<h3 style="font-size:1.2rem;margin-bottom:32px;color:var(--magenta-light);text-transform:uppercase;letter-spacing:1px;">Co-Founders</h3>
+<div class="founders-row">
+<div class="team-member">
+<div class="member-image"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bryan"></div>
+<div class="member-info">
+<h3>Bryan</h3>
+<div class="member-title">Co-Founder & Strategy Lead</div>
+<p>Strategic thinker and technology innovator. Bryan brings expertise in AI adoption, growth strategy, and building scalable systems. Based in Point Pleasant, NJ, he's passionate about helping firms leverage technology without losing the human touch.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="member-image"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Kirk"></div>
+<div class="member-info">
+<h3>Kirk</h3>
+<div class="member-title">Co-Founder & Business Development</div>
+<p>Sales and marketing expert who believes in the power of simplicity. Kirk's "Keep It Simple" philosophy ensures every strategy we recommend is straightforward, executable, and focused on one thing: results for your firm.</p>
+</div>
+</div>
+</div>
+</div>
+
+<h3 style="font-size:1.2rem;margin-bottom:32px;color:var(--magenta-light);text-transform:uppercase;letter-spacing:1px;">Leadership & Specialists</h3>
+<div class="team-grid">
+<div class="team-member">
+<div class="member-image"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marketing Director"></div>
+<div class="member-info">
+<h3>Sarah</h3>
+<div class="member-title">Marketing Director</div>
+<p>10+ years in legal services marketing. Sarah specializes in positioning law firms for premium acquisition and managing multi-channel campaigns that attract the right clients.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="member-image"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Senior Developer"></div>
+<div class="member-info">
+<h3>Marcus</h3>
+<div class="member-title">Senior Developer</div>
+<p>Full-stack developer with expertise in legal tech infrastructure. Marcus builds and optimizes the platforms and automation systems that power our campaigns and client dashboards.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="member-image"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Content Strategist"></div>
+<div class="member-info">
+<h3>Jennifer</h3>
+<div class="member-title">Content Strategist</div>
+<p>Former litigation paralegal turned content expert. Jennifer writes SEO-optimized content that speaks to potential clients while respecting legal compliance and ethics.</p>
+</div>
+</div>
+<div class="team-member">
+<div class="member-image"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Account Manager"></div>
+<div class="member-info">
+<h3>David</h3>
+<div class="member-title">Account Manager</div>
+<p>Dedicated client success specialist. David ensures every law firm has a single point of contact who understands their practice, goals, and challenges.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<div class="cta-box">
+<h2>Ready to Grow Your Client Base?</h2>
+<p>Let's talk about where your practice is today, your growth goals, and how we can help you get there.</p>
+<a href="contact.html" class="btn btn-primary" style="margin-top:20px;">Schedule a Consultation</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div style="font-family:var(--serif);font-size:1.4rem;margin-bottom:12px;">LGC</div>
+<p>AI-powered legal marketing for law firms serious about growth.</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<ul><li><a href="#">SEO & Local Search</a></li><li><a href="#">PPC Advertising</a></li><li><a href="#">Lead Generation</a></li><li><a href="#">Website Design</a></li></ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul><li><a href="#">About</a></li><li><a href="#">Contact</a></li><li><a href="#">Blog</a></li></ul>
+</div>
+<div class="footer-col">
+<h4>Resources</h4>
+<ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 LetsGrowClients.com. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
